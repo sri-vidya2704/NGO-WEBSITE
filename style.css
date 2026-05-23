@@ -5,6 +5,7 @@
 }
 body{
   font-family: 'Poppins',sans-serif;
+  overflow-x: hidden;
 }
 .logo{
   display: flex;
@@ -26,7 +27,8 @@ body{
   top: 0;
   left: 0;
   width: 100%;
-  padding: 6px 70px;
+   flex-wrap: wrap;
+  padding: 6px 20px;
   justify-content: space-between;
   position: fixed;
   align-items: center;
@@ -37,6 +39,8 @@ nav{
   display: flex;
   gap: 35px;
   text-decoration: none;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 nav a{
   font-size: 15px;
@@ -67,7 +71,7 @@ nav a:hover{
 }
 .hero-content{
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -75,9 +79,9 @@ nav a:hover{
   max-width: 650px;
 }
 .hero-left h1{
-  font-size:70px;
   line-height:1.1;
   margin-bottom:25px;
+  font-size: clamp(36px, 5vw, 70px);
 }
 .hero-left h1 span{
   color: #1d8445;
@@ -123,7 +127,9 @@ nav a:hover{
 }
 .about-image img{
   border-radius: 80px;
-  width: 560px;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
 }
 .about-right{
   display: flex;
@@ -206,7 +212,8 @@ nav a:hover{
 .impact{
   color:#fff;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   text-align:center;
   padding:70px 70px;
   border-top:1px solid rgba(255,255,255,.1);
@@ -232,12 +239,14 @@ nav a:hover{
 .gallery-grid{
   margin-top: 30px;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap:15px;
 }
 .gallery-grid img{
-  height:250px;
   border-radius:10px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 .contact{
   padding:100px 20px;
