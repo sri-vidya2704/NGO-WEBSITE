@@ -63,17 +63,28 @@ nav a:hover{
   background-color: #146C43;
 }
 .hero{
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background:url('images/final.png') center/cover no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 70px;
+  padding: 0 clamp(20px, 5vw, 70px);
 }
 .hero-content{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+}
+@media (max-width: 900px){
+  .hero-content{
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-left{
+    max-width: 100%;
+  }
 }
 .hero-left{
   max-width: 650px;
@@ -89,12 +100,14 @@ nav a:hover{
 .hero-left p{
   font-size:18px;
   line-height:1.8;
-  max-width:550px;
+  max-width:100%;
 }
 .hero-btns{
   margin-top:40px;
   display:flex;
   gap:18px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .first-btn{
   background: #198754;
